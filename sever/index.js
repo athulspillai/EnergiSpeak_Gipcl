@@ -5,7 +5,6 @@ const path = require('path');
 
 const app = express();
 const port = 8000;
-const frontPort = 3000;
 
 // Middleware
 app.use(cors());
@@ -51,7 +50,3 @@ app.listen(port, () => {
     console.log(`Backend server running at http://localhost:${port}`);
 });
 
-// Start the frontend server (if it's part of the same app)
-app.listen(frontPort, () => {
-    console.log(`Frontend server running at http://localhost:${frontPort}`);
-});
