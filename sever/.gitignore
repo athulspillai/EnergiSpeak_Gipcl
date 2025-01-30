@@ -1,4 +1,29 @@
-# Node.js dependencies
-node_modules
+# Node modules
+node_modules/
 
+# Logs
+*.log
 
+# Environment variables
+.env
+
+# SQL Server connection logs or sensitive data (if any)
+*.bak
+*.mdf
+*.ldf
+
+# Build output
+/dist
+/build
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE / editor specific files
+.vscode/
+.idea/
+
+# npm package lock (optional based on your preference)
+package-lock.json
+yarn.lock
