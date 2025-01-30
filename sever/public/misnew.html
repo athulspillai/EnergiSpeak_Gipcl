@@ -29,10 +29,10 @@
             </span>
         </div>
 
-        <div class="tables-container">
-            <table class="Previous-Blocks-table">
-                <caption class="Previous-Block-caption">Real Time Value</caption>
-                <thead class="Previous-Blockss-Head">
+        <div class="tables-containerss">
+            <table class="Real-Time-table">
+                <caption class="Real-Time-caption">Real Time Value</caption>
+                <thead class="Real-Time-table-tbody">
                     <tr>
                         <th colspan="3" style="text-align: center; color: red; padding: 10px;">SLPP Phase-1</th>
                     </tr>
@@ -75,12 +75,12 @@
                 </tbody>
             </table>
 
-            <table class="Current-Blocks-table">
+            <table class="Misnew-Current-Blocks-table">
 
             </table>
 
-            <table class="Cumulatives-table">
-                <caption class="Cumulatives-caption"> Cumm. Upto Pre Blk</caption>
+            <table class="Misnew-Cumulatives-table">
+                <caption class="Misnew-Cumulatives-caption"> Cumm. Upto Pre Blk</caption>
                 <thead>
                     <tr>
                         <th></th>
@@ -104,20 +104,15 @@
                     <th colspan="4" style="text-align: center; color: red; padding: 10px;">TOTAL</th>
                 </tr>
                 <tbody class="TOTAL">
-                    <tr>
-                        <td style="color: #00a9a9;">Gain/Lose</td>
-                        <td style="color: white;">3437</td>
-                        <td style="color: white;">3437</td>
-                        <td style="color: white;">3437</td>
-                    </tr>
+                   
                 </tbody>
             </table>
 
         </div>
 
-        <div class="tables-containers">
-            <table class="Real-Time-Generation-Data-table">
-                <caption class="Real-Time-Generation-Data-caption">
+        <div class="tabless-containerss">
+            <table class="Acp-Fuel-Cost-Frequency-table">
+                <caption class="Acp-Fuel-Cost-Frequency-caption">
                     ACP/Fuel Cost/Frequency
                 </caption>
                 <tbody>
@@ -164,7 +159,7 @@
 
         async function fetchData() {
             try {
-                const response = await fetch('http://localhost:8000/EMS_Network/WebData');
+                const response = await fetch('/EMS_Network/WebData');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -178,14 +173,14 @@
                 const normalRate = data.find(item => item.ID === 17);
 
                 // Populate the SLPP Phase-1 tbody
-                const realTimeValueTbody = document.querySelector('.Previous-Blocks-table tbody');
+                const realTimeValueTbody = document.querySelector('.Real-Time-table tbody');
                 const realTimeValueSLPPPhase2 = document.querySelector('.SLPP-Phase-2');
                 const realTimeValueSLPP = document.querySelector('.SLPP');
-                const currentBlockTable = document.querySelector('.Current-Blocks-table');
-                const cummUptoPreBlkTable = document.querySelector('.Cumulatives-table tbody')
+                const currentBlockTable = document.querySelector('.Misnew-Current-Blocks-table');
+                const cummUptoPreBlkTable = document.querySelector('.Misnew-Cumulatives-table tbody')
                 const cummUptoPreBlkREACTIVEPOWERTable = document.querySelector('.REACTIVE-POWER')
                 const cummUptoPreBlkTOTAL = document.querySelector('.TOTAL')
-                const acpFuelCostFrequencyTable = document.querySelector('.Real-Time-Generation-Data-table tbody');
+                const acpFuelCostFrequencyTable = document.querySelector('.Acp-Fuel-Cost-Frequency-table tbody');
                 const normalRateTable = document.querySelector('.Normal-Rate-table tbody');
 
 
@@ -254,7 +249,7 @@
                 })
 
                 currentBlockTable.innerHTML = `
-                <caption class="Current-Blocks-table-caption">Current Block</caption>
+                <caption class="Misnew-Current-Blocks-table-caption">Current Block</caption>
                 <thead>
                     <tr>
                         <td style="color: #e9e900;">Inst.Frequency(Hz)</td>

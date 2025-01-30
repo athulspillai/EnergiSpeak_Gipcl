@@ -168,7 +168,7 @@
 
         async function fetchData() {
             try {
-                const response = await fetch('http://localhost:8000/EMS_Network/WebData');
+                const response = await fetch('/EMS_Network/WebData');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
